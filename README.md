@@ -25,17 +25,17 @@ and allows the user to change the time and day to any of their choosing.
     
     3. Enable USB debugging in the Developer Options as follows:
     
-      a. Open the Settings app
+        a. Open the Settings app
       
-      b. Select System (Android 8.0 or higher)
+        b. Select System (Android 8.0 or higher)
       
-      c. Scroll to the bottom and select About Phone
+        c. Scroll to the bottom and select About Phone
       
-      d. Scroll to th ebottom and tap Build Number 7 times
+        d. Scroll to th ebottom and tap Build Number 7 times
       
-      e. Return to the previous screen to find Developer Options near the bottom
+        e. Return to the previous screen to find Developer Options near the bottom
       
-      f. Open Developer Options, then scroll down to enable USB debugging
+        f. Open Developer Options, then scroll down to enable USB debugging
       
       
     4. In Android Studio, click the app module in the Project window and select Run in the toolbar
@@ -73,4 +73,4 @@ setting can be changed at ```Settings->Security``` and checking the option under
 ### Acknowledgements
 
 A tutorial created by Khairul Alam Licon was used to learn how to create an Analog Clock View.
-https://viblo.asia/p/simple-way-to-create-a-custom-analog-clock-in-android-1VgZv9aRKAw
+* https://viblo.asia/p/simple-way-to-create-a-custom-analog-clock-in-android-1VgZv9aRKAw
