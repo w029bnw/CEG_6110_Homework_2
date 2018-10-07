@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="235dp"
+    android:layout_height="200dp">
+
+    <com.example.brittanywoods.homework2.AnalogView
+        android:id="@+id/analogView"
+        android:layout_width="235dp"
+        android:layout_height="200dp" />
+
+</LinearLayout>
