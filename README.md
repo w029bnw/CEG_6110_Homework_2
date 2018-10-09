@@ -64,11 +64,27 @@ setting can be changed at ```Settings->Security``` and checking the option under
 
 ### Using the App
 
+This app allows a user to add clocks, digital or analog, to the main layout of the app. As clocks are added, the user is able to scroll 
+on the main body of the app. Clocks can be added by swiping to the right or clicking on the menu button in the upper left-hand corner of the app. This menu gives the user the option of adding an analog clock, digital clock, or to undo or redo any actions. The date and time of the clocks can be manually set to any date or time by clicking on the floating button in the bottom right-hand corner of the app. Here, there are two textboxes with the desired format example set as an example. The user can enter their desired dates and times, select the change button, and the clocks will update to the entered information. 
+
+#### Note
+
+The user will need click on these menu buttons once before choosing an option, eg. click "Add Analog Clock", allow the menu to close, reopen the menu, and select this option again before the clock is opened. Once a clock of that type has been added, the user can simply select to add a clock once. 
+
 ### Design
+
+This app was designed using the MVC and Command Design Patterns.
+
+* MVC Design Pattern
+* Command Design Pattern
 
 ### Built With
 
+
+
 ### Authors
+
+Brittany Woods
 
 ### Acknowledgements
 
