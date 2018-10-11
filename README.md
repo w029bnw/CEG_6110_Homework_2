@@ -61,7 +61,6 @@ setting can be changed at ```Settings->Security``` and checking the option under
 This app allows a user to add clocks, digital or analog, to the main layout of the app. As clocks are added, the user is able to scroll
 on the main body of the app. 
 
-<img src="https://github.com/w029bnw/CEG_6110_Homework_1/blob/master/Homework1%20Photos/Screenshot_20180916-151631.png" width="256" height="412" title="Colored Text Screen1">
 <img src="resources/Screenshot_20181009-183856.png" alt="" width="256">
 
 Clocks can be added by swiping to the right or clicking on the menu button in the upper left-hand corner of the app. This menu gives the user the option of adding an analog clock, digital clock, or to undo or redo any actions. 
@@ -81,7 +80,37 @@ The user will need click on these menu buttons once before choosing an option, e
 This app was designed using the MVC and Command Design Patterns.
 
 * MVC Design Pattern
+
+  The MVC Design Pattern was used to better allow for uniform updates to be performed across all of the views simultaneously. Using an MVC also reduced the amount of code necessary to make the views function. Since the views and model are separated by a controller, it is possible to change the views, or in this case add multiple views, without changing the model. The same, singular model is used to update both views from the main class. It should be noted, however, that two controllers were used, one for the digital views and one for the analog views, as it was necessary to track the number of each type of view so that the proper XML could be inflated.
+
+  There were a series of classes created for the MVC.
+    * Clock :
+        * This class acts as the model for the MVC. It has two constructors, one using Java's Calendar to set the clocks to the current time and date and one using a Clock object. The constructor that requires a Clock object be passed allows for deep copies of Clock objects to be created.
+    * ClockController:
+      * This class acts as the controller for the MVC. It communicates with the views using data passed from the model.
+    * ClockView:
+      * This class is the abstract class for the views created for the MVC. It contains all of the classes used by all of the views.
+    * AnalogView:
+     * This class extends the ClockView abstract class and draws the analog clock displayed in the Analog Clock View. This class uses an extra method to draw the hands for the clock.
+    * DigitalView:
+     * This class extends the ClockView abstract class and draws the digital clock displayed in the Digital Clock view.
+
+
 * Command Design Pattern
+
+  The Command Design Pattern was used to encapsulate the function of the undo and redo capabilities in classes. By doing this, these commands can be used across views. This design pattern is also ideal for the undo/redo functionality.
+
+  There were two classes created for the Command Design Pattern.
+
+  * Command:
+    * This class is the interface for the Execute class.
+  * Execute:
+    * This class implements the Command interface and contains the undo and redo functions. This is where the functionality of the undo and redo occur. These actions require the use of stacks, where clock objects are pushed or popped. There exist two stacks, one for undo actions and one for redo actions, and the functions move the clock objects between stacks as necessary to complete the desired actions endlessly.
+
+##### Thoughts and Problems
+This app was assigned for the use of design patterns. The design patterns were overall very useful to the logic necessary to make the app work, particularly the Command Design Pattern. I see the benefit in using an MVC when looking at modularity but I had considerable trouble implementing it.
+
+I began designing this app by first ensuring I could create the views properly and then I moved logic accordingly to make it fit the MVC Design Pattern. I was easily able to create any number of views that updated appropriately when the logic to do so was maintained in the view classes, but when I began moving the logic outside of the views the views stopped behaving correctly. I was unable to get my Calendar object to update regularly, so I ended up using a thread that updated every second and adding logic to update the times of the clocks. I was also no longer able to inflate any number of views and only one view of each time was being displayed with the correct time and date, all others were set to null. My only remedy to this problem, which I narrowed down to be a symptom of inflating the same XML layouts under the same IDs, was to create multiple copies of the same XMLs and assign each new clock a different XML. As a result of this, the user will only be able to add 3 functioning clocks of each type to the main layout. 
 
 ### Built With
 
